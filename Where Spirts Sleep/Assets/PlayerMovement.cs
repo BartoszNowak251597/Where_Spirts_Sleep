@@ -4,26 +4,33 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public float walkingSpeed;
-    public float crouchingSpeed;
-    public float sprintingSpeed;
-    public float jumpingHeight;
+    public float walkingSpeed = 20f;
+    public float crouchingSpeed = 10f;
+    public float sprintingSpeed = 30f;
+    public float jumpingHeight = 10f;
     public Transform groundCheck;
     public LayerMask groundLayer;
-    public float fallMultiplier;
+    public float fallMultiplier = 5f;
     
     private float _currentSpeed;
     private float _horizontalMovement;
+    private int _jumpsLeft;
+    private int _maxJumps;
     
     private bool _isGrounded;
+    private bool _wasGrounded;
     private bool _isFacingRight;
     private bool _isSprinting;
     private bool _isCrouching;
+    private bool _hasDoubleJump;
 
     void Start()
     {
         _isFacingRight = transform.localScale.x > 0;
         _currentSpeed = walkingSpeed;
+
+        _maxJumps = 1;
+        _jumpsLeft = 1;
     }
 
     void Update()
@@ -31,6 +38,12 @@ public class PlayerMovement : MonoBehaviour
         _isGrounded = Physics2D.OverlapCapsule(
             groundCheck.position, new Vector2(1.8f, 0.2f),
             CapsuleDirection2D.Horizontal, 0, groundLayer);
+        
+        if (_isGrounded && !_wasGrounded)
+        {
+            _jumpsLeft = _maxJumps;
+        }
+        _wasGrounded = _isGrounded;
 
         Flip();
 
@@ -56,8 +69,7 @@ public class PlayerMovement : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         _horizontalMovement = context.ReadValue<Vector2>().x;
-
-        // Nie nadpisuj _currentSpeed — użyj flagi
+        
         if (_isCrouching)
             _currentSpeed = crouchingSpeed;
         else if (_isSprinting)
@@ -98,9 +110,23 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (context.started && _isGrounded)
+        if (context.started && _jumpsLeft > 0)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingHeight);
+            _jumpsLeft--;
+        }
+    }
+    public void EnableDoubleJump()
+    {
+        if (!_hasDoubleJump)
+        {
+            _hasDoubleJump = true;
+            _maxJumps = 2;
+
+            if (_isGrounded)
+            {
+                _jumpsLeft = _maxJumps;
+            }
         }
     }
 }

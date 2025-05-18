@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\PlayerMovement.cs" />
-    <Compile Include="Assets\CharacterImplementation.cs" />
+    <Compile Include="Assets\DoubleJumpPickup.cs" />
     <Reference Include="UnityEngine">
       <HintPath>E:\unity\editor\6000.1.3f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
