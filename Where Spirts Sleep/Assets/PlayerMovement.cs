@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -36,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         _isGrounded = Physics2D.OverlapCapsule(
-            groundCheck.position, new Vector2(1.8f, 0.2f),
+            groundCheck.position, new Vector2(1.0f, 0.1f),
             CapsuleDirection2D.Horizontal, 0, groundLayer);
         
         if (_isGrounded && !_wasGrounded)
@@ -114,6 +115,11 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingHeight);
             _jumpsLeft--;
+        }
+
+        if (context.canceled)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * Time.deltaTime);
         }
     }
     public void EnableDoubleJump()
