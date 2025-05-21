@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpingHeight = 10f;
     public Transform groundCheck;
     public LayerMask groundLayer;
-    public float fallMultiplier = 5f;
+    public float fallMultiplier = 10f;
     
     private float _currentSpeed;
     private float _horizontalMovement;
