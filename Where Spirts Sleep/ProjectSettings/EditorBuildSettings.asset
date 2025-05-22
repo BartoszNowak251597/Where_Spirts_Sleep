@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Manu.unity
+    path: Assets/Scenes/0 Main Manu.unity
     guid: 304c26511f2a4ad4f88b62704158f636
   - enabled: 1
-    path: Assets/Scenes/Chapter 1 tutorial area.unity
+    path: Assets/Scenes/1 tutorial area.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/2 First Statue.unity
+    guid: c006e5fef66d3ee4795752dd933e0a8d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
