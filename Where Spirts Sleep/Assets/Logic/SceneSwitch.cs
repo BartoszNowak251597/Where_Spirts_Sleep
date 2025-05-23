@@ -5,11 +5,23 @@ namespace Logic
 {
     public class SceneSwitch : MonoBehaviour
     {
+        public int sceneToSwitchTo;
+        public int sceneIndex;
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Player"))
             {
-                SceneManager.LoadScene(2);
+                var player = other.GetComponent<PlayerMovement>();
+                if (player != null)
+                {
+                    SaveSystem.Save(
+                        checkpointID: "AUTO",
+                        sceneIndex: sceneToSwitchTo,
+                        unlockedAbilities: player.GetUnlockedAbilities()
+                    );
+                }
+
+                SceneManager.LoadScene(sceneToSwitchTo);
             }
         }
     

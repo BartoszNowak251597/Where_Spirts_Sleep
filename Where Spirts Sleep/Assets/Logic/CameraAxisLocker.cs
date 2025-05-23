@@ -10,42 +10,45 @@ namespace Logic
         public bool affectX = true;
         public bool affectY = true;
 
+        private bool _playerInside;
+
         private void OnTriggerEnter2D(Collider2D other)
         {
-            Debug.Log("Weszło w trigger");
-
-            if (!other.CompareTag("Player")) {
-                Debug.Log("To nie gracz");
-                return;
+            if (other.CompareTag("Player"))
+            {
+                _playerInside = true;
             }
-
-            Debug.Log("To jest gracz!");
-            if (!Camera.main) {
-                Debug.Log("Brak kamery!");
-                return;
-            }
-
-            var cam = Camera.main.GetComponent<FollowCharacter>();
-            if (!cam) {
-                Debug.Log("Brak FollowCharacter na kamerze!");
-                return;
-            }
-
-            Debug.Log("Zmiana blokady: X=" + lockX + ", Y=" + lockY);
-            if (affectX) cam.lockX = lockX;
-            if (affectY) cam.lockY = lockY;
         }
+
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (!other.CompareTag("Player")) return;
-            Debug.Log("Gracz wyszedł z triggera");
+            if (other.CompareTag("Player"))
+            {
+                _playerInside = false;
 
-            if (!Camera.main) return;
-            var cam = Camera.main.GetComponent<FollowCharacter>();
-            if (!cam) return;
+                if (Camera.main)
+                {
+                    var cam = Camera.main.GetComponent<FollowCharacter>();
+                    if (cam != null)
+                    {
+                        if (affectX) cam.lockX = false;
+                        if (affectY) cam.lockY = false;
+                    }
+                }
+            }
+        }
 
-            if (affectX) cam.lockX = false;
-            if (affectY) cam.lockY = false;
+        private void Update()
+        {
+            if (_playerInside && Camera.main)
+            {
+                var cam = Camera.main.GetComponent<FollowCharacter>();
+                if (cam != null)
+                {
+                    if (affectX) cam.lockX = lockX;
+                    if (affectY) cam.lockY = lockY;
+                }
+            }
         }
     }
 }

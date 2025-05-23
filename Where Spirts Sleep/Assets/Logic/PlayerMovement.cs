@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
-using System.Linq;
-
 
 namespace Logic
 {
@@ -16,13 +14,13 @@ namespace Logic
         public Transform groundCheck;
         public LayerMask groundLayer;
         public float fallMultiplier = 10f;
-    
+
         private float _currentSpeed;
         private float _horizontalMovement;
         private int _jumpsLeft;
         private int _maxJumps;
         private HashSet<PlayerAbility> _unlockedAbilities = new();
-    
+
         private bool _isGrounded;
         private bool _wasGrounded;
         private bool _isFacingRight;
@@ -35,17 +33,16 @@ namespace Logic
             _isFacingRight = transform.localScale.x > 0;
             _currentSpeed = walkingSpeed;
 
-            _maxJumps = HasDoubleJump() ? 2 : 1;
+            _maxJumps = 1;
             _jumpsLeft = 1;
         }
-
 
         void Update()
         {
             _isGrounded = Physics2D.OverlapCapsule(
                 groundCheck.position, new Vector2(1.0f, 0.1f),
                 CapsuleDirection2D.Horizontal, 0, groundLayer);
-        
+
             if (_isGrounded && !_wasGrounded)
             {
                 _jumpsLeft = _maxJumps;
@@ -76,7 +73,7 @@ namespace Logic
         public void Move(InputAction.CallbackContext context)
         {
             _horizontalMovement = context.ReadValue<Vector2>().x;
-        
+
             if (_isCrouching)
                 _currentSpeed = crouchingSpeed;
             else if (_isSprinting)
@@ -128,38 +125,34 @@ namespace Logic
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * Time.deltaTime);
             }
         }
-        public void EnableDoubleJump()
-        {
-            if (!_hasDoubleJump)
-            {
-                _hasDoubleJump = true;
-                _maxJumps = 2;
 
-                if (_isGrounded)
-                {
-                    _jumpsLeft = _maxJumps;
-                }
-            }
-        }
         public void UnlockAbility(PlayerAbility ability)
         {
             if (_unlockedAbilities.Add(ability))
             {
                 Debug.Log("Odblokowano umiejętność: " + ability);
 
-                // Specjalna logika dla umiejętności
                 if (ability == PlayerAbility.DoubleJump)
                 {
-                    EnableDoubleJump();
+                    _hasDoubleJump = true;
                 }
 
-                // Dodaj tu inne przypadki np. Dash, WallJump, itp.
+                RefreshJumpSettings();
+            }
+            else
+            {
+                Debug.Log("Umiejętność już odblokowana: " + ability);
             }
         }
 
         public IEnumerable<PlayerAbility> GetUnlockedAbilities() => _unlockedAbilities;
 
         public bool HasDoubleJump() => _unlockedAbilities.Contains(PlayerAbility.DoubleJump);
-        
+
+        public void RefreshJumpSettings()
+        {
+            _maxJumps = HasDoubleJump() ? 2 : 1;
+            _jumpsLeft = _isGrounded ? _maxJumps : Mathf.Min(_jumpsLeft, _maxJumps);
+        }
     }
 }

@@ -7,7 +7,7 @@ namespace Logic
     public class SaveData
     {
         public string checkpointID;
-        public string sceneName;
+        public int sceneIndex;
         public List<string> unlockedAbilities = new();
     }
 
@@ -15,15 +15,15 @@ namespace Logic
     {
         private const string SaveKey = "PlayerSave";
 
-        public static void Save(string checkpointID, string sceneName, IEnumerable<PlayerAbility> unlockedAbilities)
+        public static void Save(string checkpointID, int sceneIndex, IEnumerable<PlayerAbility> unlockedAbilities)
         {
             SaveData data = new SaveData
             {
                 checkpointID = checkpointID,
-                sceneName = sceneName,
+                sceneIndex = sceneIndex,
                 unlockedAbilities = new List<string>()
             };
-
+            foreach (var a in unlockedAbilities) Debug.Log("Umiejętność zapisywana: " + a);
             foreach (var ability in unlockedAbilities)
             {
                 data.unlockedAbilities.Add(ability.ToString());

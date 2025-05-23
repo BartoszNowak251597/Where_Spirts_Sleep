@@ -16,7 +16,7 @@ namespace Logic
             var save = SaveSystem.Load();
             if (save != null)
             {
-                SceneManager.LoadScene(save.sceneName);
+                SceneManager.LoadScene(save.sceneIndex);
             }
         }
 

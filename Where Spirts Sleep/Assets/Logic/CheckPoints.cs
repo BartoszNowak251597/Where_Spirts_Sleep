@@ -16,7 +16,7 @@ namespace Logic
             {
                 SaveSystem.Save(
                     checkpointID,
-                    SceneManager.GetActiveScene().name,
+                    SceneManager.GetActiveScene().buildIndex,
                     player.GetUnlockedAbilities()
                 );
 

@@ -8,37 +8,45 @@ namespace Logic
         private void Start()
         {
             var save = SaveSystem.Load();
-            if (save == null) return;
-
-            if (save.sceneName != SceneManager.GetActiveScene().name) return;
-
-            GameObject[] checkpoints = GameObject.FindGameObjectsWithTag("Checkpoint");
-
-            foreach (GameObject checkpointObj in checkpoints)
+            if (save == null)
             {
-                Checkpoint checkpoint = checkpointObj.GetComponent<Checkpoint>();
-                if (checkpoint != null && checkpoint.checkpointID == save.checkpointID)
+                Debug.LogWarning("Brak zapisu");
+                return;
+            }
+
+            Debug.Log("Zapis: checkpoint=" + save.checkpointID + ", scena=" + save.sceneIndex);
+
+            if (save.sceneIndex != SceneManager.GetActiveScene().buildIndex)
+            {
+                Debug.LogWarning("Zapis nie pasuje do aktualnej sceny!");
+                return;
+            }
+
+
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player == null)
+            {
+                Debug.LogError("Gracz nie znaleziony!");
+                return;
+            }
+            else
+            {
+                Debug.Log("Gracz znaleziony.");
+            }
+
+            var movement = player.GetComponent<PlayerMovement>();
+            if (movement == null)
+            {
+                Debug.LogError("Brak PlayerMovement!");
+                return;
+            }
+
+            foreach (string ability in save.unlockedAbilities)
+            {
+                Debug.Log("Odtwarzanie umiejętności: " + ability);
+                if (System.Enum.TryParse(ability, out PlayerAbility parsed))
                 {
-                    GameObject player = GameObject.FindGameObjectWithTag("Player");
-                    if (player != null)
-                    {
-                        player.transform.position = checkpointObj.transform.position;
-
-                        PlayerMovement movement = player.GetComponent<PlayerMovement>();
-                        if (movement != null)
-                        {
-                            foreach (string abilityName in save.unlockedAbilities)
-                            {
-                                if (System.Enum.TryParse(abilityName, out PlayerAbility ability))
-                                {
-                                    movement.UnlockAbility(ability);
-                                }
-                            }
-                        }
-
-                        Debug.Log("Gracz odrodzony przy checkpoint: " + save.checkpointID);
-                    }
-                    break;
+                    movement.UnlockAbility(parsed);
                 }
             }
         }
