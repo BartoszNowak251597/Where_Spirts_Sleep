@@ -14,6 +14,7 @@ namespace Logic
         public Transform groundCheck;
         public LayerMask groundLayer;
         public float fallMultiplier = 10f;
+        public Animator animator;
 
         private float _currentSpeed;
         private float _horizontalMovement;
@@ -57,6 +58,11 @@ namespace Logic
             {
                 rb.linearVelocity += Vector2.up * (Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime);
             }
+            float horizontalSpeed = Mathf.Abs(rb.linearVelocity.x);
+            if (horizontalSpeed < 0.1f)
+                horizontalSpeed = 0f;
+
+            animator.SetFloat("magnitude", horizontalSpeed);
         }
 
         private void Flip()
