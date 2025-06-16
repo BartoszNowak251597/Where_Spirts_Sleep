@@ -6,7 +6,7 @@ namespace Logic
     public class SceneSwitch : MonoBehaviour
     {
         public int sceneToSwitchTo;
-        public int sceneIndex;
+
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Player"))
@@ -20,10 +20,9 @@ namespace Logic
                         unlockedAbilities: player.GetUnlockedAbilities()
                     );
                 }
-
-                SceneManager.LoadScene(sceneToSwitchTo);
+                
+                SceneManager.LoadScene(sceneToSwitchTo); // przekazujemy nazwę docelowej sceny
             }
         }
-    
     }
 }
