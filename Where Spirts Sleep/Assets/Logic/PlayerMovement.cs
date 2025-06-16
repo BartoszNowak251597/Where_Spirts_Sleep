@@ -7,9 +7,9 @@ namespace Logic
     public class PlayerMovement : MonoBehaviour
     {
         public Rigidbody2D rb;
-        public float walkingSpeed = 20f;
+        public float walkingSpeed = 8f;
         public float crouchingSpeed = 10f;
-        public float sprintingSpeed = 30f;
+        public float sprintingSpeed = 20f;
         public float jumpingHeight = 10f;
         public Transform groundCheck;
         public LayerMask groundLayer;
@@ -124,11 +124,14 @@ namespace Logic
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingHeight);
                 _jumpsLeft--;
+                animator.SetTrigger("Jump");
+                
             }
 
             if (context.canceled)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * Time.deltaTime);
+                animator.SetTrigger("Jump");
             }
         }
 
@@ -141,6 +144,7 @@ namespace Logic
                 if (ability == PlayerAbility.DoubleJump)
                 {
                     _hasDoubleJump = true;
+                    animator.SetTrigger("Jump");
                 }
 
                 RefreshJumpSettings();

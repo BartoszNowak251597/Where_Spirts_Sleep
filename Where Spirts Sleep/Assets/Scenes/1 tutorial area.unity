@@ -755,8 +755,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 4284988962291399987, guid: b784f7e6660e5394a8ab84a5b7bffb2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1779,8 +1779,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 4284988962291399987, guid: b784f7e6660e5394a8ab84a5b7bffb2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2850,7 +2850,7 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 26.786823
+  m_FocalLength: 14.94364
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
@@ -2865,9 +2865,9 @@ Camera:
     height: 2
   near clip plane: 0.3
   far clip plane: 10
-  field of view: 88.98186
+  field of view: 105.92198
   orthographic: 1
-  orthographic size: 25
+  orthographic size: 40
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2892,7 +2892,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 409.7, y: -39.48, z: -10}
+  m_LocalPosition: {x: 377.4, y: -45.26, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2911,7 +2911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followSpeed: 1000
-  height: 12
+  height: 5
   target: {fileID: 1068151333}
   lockX: 0
   lockY: 0
@@ -4705,10 +4705,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1068151331}
-  walkingSpeed: 20
-  crouchingSpeed: 10
-  sprintingSpeed: 30
-  jumpingHeight: 12
+  walkingSpeed: 8
+  crouchingSpeed: 5
+  sprintingSpeed: 20
+  jumpingHeight: 13
   groundCheck: {fileID: 936051523}
   groundLayer:
     serializedVersion: 2
@@ -5007,7 +5007,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 378.2, y: -45.3, z: -1}
-  m_LocalScale: {x: 3.5, y: 3.3796399, z: 14.136795}
+  m_LocalScale: {x: 3, y: 2.8968341, z: 12.117253}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 936051523}
@@ -7010,8 +7010,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 4284988962291399987, guid: b784f7e6660e5394a8ab84a5b7bffb2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
