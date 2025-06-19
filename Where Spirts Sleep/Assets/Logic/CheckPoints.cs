@@ -17,8 +17,10 @@ namespace Logic
                 SaveSystem.Save(
                     checkpointID,
                     SceneManager.GetActiveScene().buildIndex,
-                    player.GetUnlockedAbilities()
+                    player.GetUnlockedAbilities(),
+                    transform.position // pozycja checkpointu
                 );
+
 
                 Debug.Log("Checkpoint zapisany: " + checkpointID);
             }

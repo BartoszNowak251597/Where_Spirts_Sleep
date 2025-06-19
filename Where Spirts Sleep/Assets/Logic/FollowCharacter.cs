@@ -21,7 +21,7 @@ namespace Logic
 
         private void Update()
         {
-            Debug.Log($"Kamera: override={_overrideTarget}, pos={transform.position}");
+            // Debug.Log($"Kamera: override={_overrideTarget}, pos={transform.position}");
             if (!_overrideTarget && target == null) return;
 
             Vector3 targetPos;

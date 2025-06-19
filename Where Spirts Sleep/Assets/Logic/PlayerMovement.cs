@@ -29,6 +29,7 @@ namespace Logic
         private bool _isSprinting;
         private bool _isCrouching;
         private bool _hasDoubleJump;
+        private static PlayerMovement instance;
 
         void Start()
         {
@@ -45,6 +46,13 @@ namespace Logic
         }
         private void Awake()
         {
+            if (instance != null && instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            instance = this;
             DontDestroyOnLoad(gameObject);
         }
 

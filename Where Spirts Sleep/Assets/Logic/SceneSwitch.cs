@@ -17,7 +17,8 @@ namespace Logic
                     SaveSystem.Save(
                         checkpointID: "AUTO",
                         sceneIndex: sceneToSwitchTo,
-                        unlockedAbilities: player.GetUnlockedAbilities()
+                        unlockedAbilities: player.GetUnlockedAbilities(),
+                        transform.position
                     );
                 }
                 
