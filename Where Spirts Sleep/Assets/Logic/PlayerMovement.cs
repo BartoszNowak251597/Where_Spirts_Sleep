@@ -15,6 +15,7 @@ namespace Logic
         public LayerMask groundLayer;
         public float fallMultiplier = 10f;
         public Animator animator;
+        public bool enableDoubleJumpManually = false;
 
         private float _currentSpeed;
         private float _horizontalMovement;
@@ -36,10 +37,20 @@ namespace Logic
 
             _maxJumps = 1;
             _jumpsLeft = 1;
+
+            if (enableDoubleJumpManually)
+            {
+                UnlockAbility(PlayerAbility.DoubleJump);
+            }
+        }
+        private void Awake()
+        {
+            DontDestroyOnLoad(gameObject);
         }
 
         void Update()
         {
+            // Check ground state and reset jumps
             _isGrounded = Physics2D.OverlapCapsule(
                 groundCheck.position, new Vector2(1.0f, 0.1f),
                 CapsuleDirection2D.Horizontal, 0, groundLayer);
@@ -50,20 +61,28 @@ namespace Logic
             }
             _wasGrounded = _isGrounded;
 
-            Flip();
+            // Enable double jump if manually toggled during gameplay
+            if (enableDoubleJumpManually && !_unlockedAbilities.Contains(PlayerAbility.DoubleJump))
+            {
+                UnlockAbility(PlayerAbility.DoubleJump);
+            }
 
+            // Movement and animation
+            Flip();
             rb.linearVelocity = new Vector2(_horizontalMovement * _currentSpeed, rb.linearVelocity.y);
 
             if (rb.linearVelocity.y < 0)
             {
                 rb.linearVelocity += Vector2.up * (Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime);
             }
+
             float horizontalSpeed = Mathf.Abs(rb.linearVelocity.x);
             if (horizontalSpeed < 0.1f)
                 horizontalSpeed = 0f;
 
             animator.SetFloat("magnitude", horizontalSpeed);
         }
+
 
         private void Flip()
         {
