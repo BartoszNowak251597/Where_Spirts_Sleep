@@ -89,6 +89,7 @@ namespace Logic
                 horizontalSpeed = 0f;
 
             animator.SetFloat("magnitude", horizontalSpeed);
+            animator.SetBool("is_crouching", _isCrouching);
         }
 
 
