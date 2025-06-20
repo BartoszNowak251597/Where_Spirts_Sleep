@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Sprinty-jasne-ska\u0142y(1) 1_0": 6904187901131885588
+      "Sprinty-jasne-ska\u0142y(1) 1_1": -2976066348340281625
+      "Sprinty-jasne-ska\u0142y(1) 1_2": -1804169190858979832
+      "Sprinty-jasne-ska\u0142y(1) 1_3": -3417002310234852568
+      "Sprinty-jasne-ska\u0142y(1) 1_4": -1657294232276037810
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
