@@ -41,8 +41,6 @@ namespace Logic
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            Debug.Log($"Trigger EXIT: {other.name}");
-
             if (!other.CompareTag("Player")) return;
             if (followCam == null) return;
 
