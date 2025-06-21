@@ -11,11 +11,13 @@ namespace Logic
         public float crouchingSpeed = 10f;
         public float sprintingSpeed = 20f;
         public float jumpingHeight = 10f;
+        public float crouchColliderScale = 0.5f;
         public Transform groundCheck;
         public LayerMask groundLayer;
         public float fallMultiplier = 10f;
         public Animator animator;
         public bool enableDoubleJumpManually = false;
+        public BoxCollider2D playerCollider;
 
         private float _currentSpeed;
         private float _horizontalMovement;
@@ -31,10 +33,16 @@ namespace Logic
         private bool _hasDoubleJump;
         private static PlayerMovement instance;
 
+        private Vector2 _originalColliderSize;
+        private Vector2 _originalColliderOffset;
+
         void Start()
         {
             _isFacingRight = transform.localScale.x > 0;
             _currentSpeed = walkingSpeed;
+
+            _originalColliderSize = playerCollider.size;
+            _originalColliderOffset = playerCollider.offset;
 
             _maxJumps = 1;
             _jumpsLeft = 1;
@@ -44,6 +52,7 @@ namespace Logic
                 UnlockAbility(PlayerAbility.DoubleJump);
             }
         }
+
         private void Awake()
         {
             if (instance != null && instance != this)
@@ -58,7 +67,6 @@ namespace Logic
 
         void Update()
         {
-            // Check ground state and reset jumps
             _isGrounded = Physics2D.OverlapCapsule(
                 groundCheck.position, new Vector2(1.0f, 0.1f),
                 CapsuleDirection2D.Horizontal, 0, groundLayer);
@@ -69,13 +77,11 @@ namespace Logic
             }
             _wasGrounded = _isGrounded;
 
-            // Enable double jump if manually toggled during gameplay
             if (enableDoubleJumpManually && !_unlockedAbilities.Contains(PlayerAbility.DoubleJump))
             {
                 UnlockAbility(PlayerAbility.DoubleJump);
             }
 
-            // Movement and animation
             Flip();
             rb.linearVelocity = new Vector2(_horizontalMovement * _currentSpeed, rb.linearVelocity.y);
 
@@ -91,7 +97,6 @@ namespace Logic
             animator.SetFloat("magnitude", horizontalSpeed);
             animator.SetBool("is_crouching", _isCrouching);
         }
-
 
         private void Flip()
         {
@@ -138,13 +143,23 @@ namespace Logic
                 _isCrouching = true;
                 _isSprinting = false;
                 _currentSpeed = crouchingSpeed;
+
+                float newHeight = _originalColliderSize.y * crouchColliderScale;
+                float offsetAdjustment = (_originalColliderSize.y - newHeight) / 2f;
+
+                playerCollider.size = new Vector2(_originalColliderSize.x, newHeight);
+                playerCollider.offset = new Vector2(_originalColliderOffset.x, _originalColliderOffset.y - offsetAdjustment);
             }
             else if (context.canceled)
             {
                 _isCrouching = false;
                 _currentSpeed = walkingSpeed;
+
+                playerCollider.size = _originalColliderSize;
+                playerCollider.offset = _originalColliderOffset;
             }
         }
+
 
         public void Jump(InputAction.CallbackContext context)
         {
@@ -153,7 +168,6 @@ namespace Logic
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingHeight);
                 _jumpsLeft--;
                 animator.SetTrigger("Jump");
-                
             }
 
             if (context.canceled)

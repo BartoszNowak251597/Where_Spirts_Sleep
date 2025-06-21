@@ -6010,6 +6010,7 @@ MonoBehaviour:
   crouchingSpeed: 5
   sprintingSpeed: 20
   jumpingHeight: 13
+  crouchColliderScale: 0.79
   groundCheck: {fileID: 936051523}
   groundLayer:
     serializedVersion: 2
@@ -6017,6 +6018,7 @@ MonoBehaviour:
   fallMultiplier: 10
   animator: {fileID: 1068151334}
   enableDoubleJumpManually: 0
+  playerCollider: {fileID: 1068151330}
 --- !u!114 &1068151329
 MonoBehaviour:
   m_ObjectHideFlags: 0
