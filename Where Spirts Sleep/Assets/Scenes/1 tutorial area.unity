@@ -5000,7 +5000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   focusPoint: {fileID: 1326411080}
   targetSize: 40
-  transitionSpeed: 2
+  transitionSpeed: 30
 --- !u!61 &823859282
 BoxCollider2D:
   m_ObjectHideFlags: 0
