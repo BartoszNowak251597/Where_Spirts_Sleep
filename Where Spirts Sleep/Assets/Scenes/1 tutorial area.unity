@@ -4026,7 +4026,7 @@ Transform:
   m_GameObject: {fileID: 664990952}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.02002, y: -6.8799973, z: 0}
+  m_LocalPosition: {x: -46.6, y: -11.1, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8026,6 +8026,7 @@ MonoBehaviour:
   pointA: {fileID: 664990953}
   pointB: {fileID: 1755170407}
   speed: 10
+  waitTimeAtPoint: 1
   groundCheck: {fileID: 651738192}
   groundLayer:
     serializedVersion: 2
@@ -10374,7 +10375,7 @@ Transform:
   m_GameObject: {fileID: 1755170406}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 127.47998, y: -7.0599976, z: 0}
+  m_LocalPosition: {x: 46.8, y: -10.3, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
