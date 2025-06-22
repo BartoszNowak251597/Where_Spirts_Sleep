@@ -18,6 +18,8 @@ namespace Logic
         public Animator animator;
         public bool enableDoubleJumpManually = false;
         public BoxCollider2D playerCollider;
+        public Transform ceilingCheck;
+        public float ceilingCheckRadius = 0.2f;
 
         private float _currentSpeed;
         private float _horizontalMovement;
@@ -89,7 +91,13 @@ namespace Logic
             {
                 rb.linearVelocity += Vector2.up * (Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime);
             }
-
+            
+            if (!_isGrounded && _isSprinting)
+            {
+                _isSprinting = false;
+                _currentSpeed = walkingSpeed;
+            }
+            
             float horizontalSpeed = Mathf.Abs(rb.linearVelocity.x);
             if (horizontalSpeed < 0.1f)
                 horizontalSpeed = 0f;
@@ -125,9 +133,12 @@ namespace Logic
         {
             if (context.started)
             {
-                _isSprinting = true;
-                _isCrouching = false;
-                _currentSpeed = sprintingSpeed;
+                if (_isGrounded)
+                {
+                    _isSprinting = true;
+                    _isCrouching = false;
+                    _currentSpeed = sprintingSpeed;
+                }
             }
             else if (context.canceled)
             {
@@ -152,12 +163,20 @@ namespace Logic
             }
             else if (context.canceled)
             {
+                bool hasCeiling = Physics2D.OverlapCircle(ceilingCheck.position, ceilingCheckRadius, groundLayer);
+    
+                if (hasCeiling)
+                {
+                    return;
+                }
+
                 _isCrouching = false;
                 _currentSpeed = walkingSpeed;
 
                 playerCollider.size = _originalColliderSize;
                 playerCollider.offset = _originalColliderOffset;
             }
+
         }
 
 
