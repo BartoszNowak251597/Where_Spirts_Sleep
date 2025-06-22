@@ -36,6 +36,12 @@ namespace Logic
 
         void Update()
         {
+            // Obsługa ENTER / SPACE
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
+            {
+                SkipToNextSlide();
+            }
+
             if (isFading)
             {
                 float fadeStep = Time.deltaTime / fadeDuration;
@@ -75,6 +81,21 @@ namespace Logic
                 {
                     SceneManager.LoadScene(nextScene);
                 }
+            }
+        }
+
+        void SkipToNextSlide()
+        {
+            if (isFading) return;
+
+            if (currentIndex + 1 < storyslides.Length)
+            {
+                timer = 0f;
+                StartFadeOut();
+            }
+            else
+            {
+                SceneManager.LoadScene(nextScene);
             }
         }
 

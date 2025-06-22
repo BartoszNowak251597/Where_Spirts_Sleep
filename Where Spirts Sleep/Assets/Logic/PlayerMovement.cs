@@ -104,6 +104,9 @@ namespace Logic
 
             animator.SetFloat("magnitude", horizontalSpeed);
             animator.SetBool("is_crouching", _isCrouching);
+			animator.SetBool("is_grounded",_isGrounded);
+            animator.SetBool("is_jumping", !_isGrounded && rb.linearVelocity.y > 0.1f);
+
         }
 
         private void Flip()
@@ -192,7 +195,6 @@ namespace Logic
             if (context.canceled)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * Time.deltaTime);
-                animator.SetTrigger("Jump");
             }
         }
 

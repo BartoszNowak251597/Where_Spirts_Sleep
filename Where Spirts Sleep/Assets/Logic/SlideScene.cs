@@ -2,18 +2,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class SlideScene
+public class SlideScene : MonoBehaviour
 {
     public Sprite[] storyslides;
     public Image displayImage;
     public AudioSource audioSource;
     public float slideDuration = 4f;
     public string nextScene = "1 tutorial area";
-    
-    
+
     private int currentIndex = 0;
     private float currentTime = 0f;
-
+    private bool autoAdvance = false;
 
     void Start()
     {
@@ -30,21 +29,37 @@ public class SlideScene
 
     void Update()
     {
-        currentTime += Time.deltaTime;
-
-        if (currentTime >= slideDuration)
+        // ENTER or SPACE pressed?
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
         {
-            currentTime = 0f;
-            currentIndex++;
+            AdvanceSlide();
+            return;
+        }
 
-            if (currentIndex < storyslides.Length)
+        // Auto-advance after time
+        if (autoAdvance)
+        {
+            currentTime += Time.deltaTime;
+
+            if (currentTime >= slideDuration)
             {
-                displayImage.sprite = storyslides[currentIndex];
+                currentTime = 0f;
+                AdvanceSlide();
             }
-            else
-            {
-                SceneManager.LoadScene(nextScene);
-            }
+        }
+    }
+
+    void AdvanceSlide()
+    {
+        currentIndex++;
+
+        if (currentIndex < storyslides.Length)
+        {
+            displayImage.sprite = storyslides[currentIndex];
+        }
+        else
+        {
+            SceneManager.LoadScene(nextScene);
         }
     }
 }

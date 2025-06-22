@@ -415,10 +415,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e4085d19647056d4c947c0439104682b, type: 3}
-  m_Resource: {fileID: 8300000, guid: e4085d19647056d4c947c0439104682b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ede5fc3c5e412674d8b97fb23f387153, type: 3}
+  m_Resource: {fileID: 8300000, guid: ede5fc3c5e412674d8b97fb23f387153, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.535
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -430,7 +430,7 @@ AudioSource:
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
+  BypassEffects: 1
   BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
