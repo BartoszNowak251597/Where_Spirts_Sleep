@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.Rendering;
 
 namespace Logic
 {
@@ -8,6 +10,8 @@ namespace Logic
     public class Slides : MonoBehaviour
     {
         public Sprite[] storyslides;
+        public TMP_Text SlideText;
+        public string[] SlideTexts;
         public Image displayImage;
         public AudioSource audioSource;
         public float slideDuration = 4f;
@@ -19,6 +23,8 @@ namespace Logic
         private bool isFading = false;
         private bool isFadingIn = false;
         private CanvasGroup canvasGroup;
+        private CanvasGroup textCanvasGroup ;
+        
 
         void Start()
         {
@@ -27,8 +33,17 @@ namespace Logic
                 displayImage.sprite = storyslides[0];
             }
 
+            if (SlideTexts.Length > 0 && SlideText != null)
+            {
+                SlideText.text = SlideTexts[0];
+            }
+
             canvasGroup = displayImage.GetComponent<CanvasGroup>();
             canvasGroup.alpha = 1f;
+            
+            textCanvasGroup = SlideText.GetComponent<CanvasGroup>();
+            textCanvasGroup.alpha = 1f;
+            
 
             if (audioSource != null)
                 audioSource.Play();
@@ -36,7 +51,6 @@ namespace Logic
 
         void Update()
         {
-            // Obsługa ENTER / SPACE
             if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
             {
                 SkipToNextSlide();
@@ -48,18 +62,22 @@ namespace Logic
                 if (isFadingIn)
                 {
                     canvasGroup.alpha += fadeStep;
-                    if (canvasGroup.alpha >= 1f)
+                    textCanvasGroup.alpha += fadeStep;
+                    if (canvasGroup.alpha >= 1f && textCanvasGroup.alpha >= 1f)
                     {
                         canvasGroup.alpha = 1f;
+                        textCanvasGroup.alpha = 1f;
                         isFading = false;
                     }
                 }
                 else
                 {
                     canvasGroup.alpha -= fadeStep;
-                    if (canvasGroup.alpha <= 0f)
+                    textCanvasGroup.alpha -= fadeStep;
+                    if (canvasGroup.alpha <= 0f && textCanvasGroup.alpha <= 0f)
                     {
                         canvasGroup.alpha = 0f;
+                        textCanvasGroup.alpha = 0f;
                         SwitchToNextSlide();
                         isFadingIn = true;
                     }
@@ -109,6 +127,11 @@ namespace Logic
         {
             currentIndex++;
             displayImage.sprite = storyslides[currentIndex];
+
+            if (currentIndex < SlideTexts.Length && SlideText != null)
+            {
+                SlideText.text = SlideTexts[currentIndex];
+            }
         }
     }
 }

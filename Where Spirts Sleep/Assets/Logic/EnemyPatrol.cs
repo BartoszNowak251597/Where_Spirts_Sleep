@@ -16,6 +16,7 @@ namespace Logic
         private bool _isGrounded;
         private bool _facingRight = true;
         private bool _isWaiting = false;
+        public Animator animator;
 
         private void Start()
         {
@@ -38,6 +39,10 @@ namespace Logic
             {
                 StartCoroutine(SwitchDirectionAfterDelay());
             }
+            
+            float currentSpeed = _isWaiting ? 0f : speed;
+            animator.SetFloat("speed", currentSpeed);
+            animator.SetBool("is_waiting", _isWaiting);
         }
 
         private IEnumerator SwitchDirectionAfterDelay()
