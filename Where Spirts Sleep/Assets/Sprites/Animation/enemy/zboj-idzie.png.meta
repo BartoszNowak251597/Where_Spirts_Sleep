@@ -372,7 +372,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      zboj-idzie_0: 8024394912976037996
+      zboj-idzie_1: 9013797172904852461
+      zboj-idzie_2: 4219149298843402343
+      zboj-idzie_3: 7875395000521048227
+      zboj-idzie_4: -101340630050586305
+      zboj-idzie_5: -1271614624130938467
+      zboj-idzie_6: 6308601174681269019
+      zboj-idzie_7: -4606964840460478621
+      zboj-idzie_8: 6659481248214869753
+      zboj-idzie_9: 1689983945412192936
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

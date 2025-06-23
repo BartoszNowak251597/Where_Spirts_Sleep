@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      zboj-idle (1)_0: -3078221570466174681
+      zboj-idle (1)_1: -8186844304022581356
+      zboj-idle (1)_2: -6940599438279689390
+      zboj-idle (1)_3: -8274038365636043227
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
