@@ -11,6 +11,7 @@ namespace Logic
     {
         public Sprite[] storyslides;
         public TMP_Text SlideText;
+        public DebugUI.Panel backgroundPanel;
         public string[] SlideTexts;
         public Image displayImage;
         public AudioSource audioSource;
@@ -24,6 +25,7 @@ namespace Logic
         private bool isFadingIn = false;
         private CanvasGroup canvasGroup;
         private CanvasGroup textCanvasGroup ;
+        private CanvasGroup PanelCanvasGroup;
         
 
         void Start()
@@ -43,6 +45,10 @@ namespace Logic
             
             textCanvasGroup = SlideText.GetComponent<CanvasGroup>();
             textCanvasGroup.alpha = 1f;
+            
+            // PanelCanvasGroup = back
+            
+            
             
 
             if (audioSource != null)
