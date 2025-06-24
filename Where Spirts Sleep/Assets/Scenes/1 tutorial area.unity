@@ -2020,6 +2020,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointID: cp1.1
+  inactiveSprite: {fileID: -5053049702557918596, guid: d73d5431b98d07a499dbb0f58fe39331, type: 3}
+  activeSprite: {fileID: -3288069576014547932, guid: d73d5431b98d07a499dbb0f58fe39331, type: 3}
 --- !u!70 &249737646
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3037,6 +3039,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointID: cp1.4
+  inactiveSprite: {fileID: -3821912502541671925, guid: d73d5431b98d07a499dbb0f58fe39331, type: 3}
+  activeSprite: {fileID: 6684072162053161590, guid: d73d5431b98d07a499dbb0f58fe39331, type: 3}
 --- !u!70 &439619647
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3117,8 +3121,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 15
-  m_Sprite: {fileID: -5053049702557918596, guid: d73d5431b98d07a499dbb0f58fe39331, type: 3}
+  m_SortingOrder: 20
+  m_Sprite: {fileID: -3821912502541671925, guid: d73d5431b98d07a499dbb0f58fe39331, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7972,7 +7976,7 @@ Transform:
   m_GameObject: {fileID: 1068151327}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 946, y: -109.1, z: -1}
+  m_LocalPosition: {x: 1380, y: -123.9, z: -1}
   m_LocalScale: {x: 3, y: 2.8968341, z: 12.117252}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -11728,6 +11732,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointID: cp1.3
+  inactiveSprite: {fileID: -5053049702557918596, guid: d73d5431b98d07a499dbb0f58fe39331, type: 3}
+  activeSprite: {fileID: -3288069576014547932, guid: d73d5431b98d07a499dbb0f58fe39331, type: 3}
 --- !u!70 &1594407740
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -11808,7 +11814,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -5053049702557918596, guid: d73d5431b98d07a499dbb0f58fe39331, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12646,6 +12652,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointID: cp1.2
+  inactiveSprite: {fileID: -5053049702557918596, guid: d73d5431b98d07a499dbb0f58fe39331, type: 3}
+  activeSprite: {fileID: -3288069576014547932, guid: d73d5431b98d07a499dbb0f58fe39331, type: 3}
 --- !u!70 &1743910872
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
