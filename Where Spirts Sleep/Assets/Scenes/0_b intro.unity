@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 99466039}
   - component: {fileID: 99466041}
   - component: {fileID: 99466040}
+  - component: {fileID: 99466042}
   m_Layer: 5
   m_Name: textPanel
   m_TagString: Untagged
@@ -146,16 +147,15 @@ RectTransform:
   m_GameObject: {fileID: 99466038}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5653686, y: 0.18763578, z: 1.2065058}
+  m_LocalScale: {x: 0.58636516, y: 0.20452301, z: 1.2065058}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1301601363}
+  m_Children: []
   m_Father: {fileID: 358440539}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2, y: -380}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.0010375977, y: 444.52}
+  m_SizeDelta: {x: 1354.4, y: -122.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &99466040
 MonoBehaviour:
@@ -170,15 +170,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 5327464135202096450, guid: dd6fcd5e8f6389846911cb7263da7b40, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -195,6 +195,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 99466038}
   m_CullTransparentMesh: 1
+--- !u!225 &99466042
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99466038}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &358440535
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,6 +303,7 @@ RectTransform:
   m_Children:
   - {fileID: 735847166}
   - {fileID: 99466039}
+  - {fileID: 1301601363}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -622,16 +635,16 @@ RectTransform:
   m_GameObject: {fileID: 1301601362}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7687576, y: 5.3294735, z: 0.8288398}
+  m_LocalScale: {x: 1.037138, y: 1.0899999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 99466039}
+  m_Father: {fileID: 358440539}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.0750303, y: 15.988434}
-  m_SizeDelta: {x: 1200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 490}
+  m_SizeDelta: {x: 1700, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5000001}
 --- !u!114 &1301601364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -654,8 +667,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: test
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 01abff9157413734e8d309f6e1d4c63b, type: 2}
+  m_sharedMaterial: {fileID: 7376109106761468290, guid: 01abff9157413734e8d309f6e1d4c63b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -679,13 +692,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 39
+  m_fontSizeBase: 39
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -936,6 +949,7 @@ MonoBehaviour:
   - {fileID: -7386023907019471588, guid: 91610921cace90e40a85cc5a62f9965e, type: 3}
   - {fileID: 7121634885741450288, guid: 52628668807ac04429309ade1297fb8a, type: 3}
   SlideText: {fileID: 1301601364}
+  backgroundPanel: {fileID: 99466038}
   SlideTexts:
   - "Dawno\u0107 to by\u0142o, na ko\u0144cu ziemi, R\xF3\u017Ca kwiat\xF3w nazbiera\u0107
     si\u0119 imala"

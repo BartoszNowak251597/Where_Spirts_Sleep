@@ -11,7 +11,8 @@ namespace Logic
     {
         public Sprite[] storyslides;
         public TMP_Text SlideText;
-        public DebugUI.Panel backgroundPanel;
+        public GameObject backgroundPanel;
+        private CanvasGroup panelCanvasGroup;
         public string[] SlideTexts;
         public Image displayImage;
         public AudioSource audioSource;
@@ -46,7 +47,8 @@ namespace Logic
             textCanvasGroup = SlideText.GetComponent<CanvasGroup>();
             textCanvasGroup.alpha = 1f;
             
-            // PanelCanvasGroup = back
+            panelCanvasGroup = backgroundPanel.GetComponent<CanvasGroup>();
+            panelCanvasGroup.alpha = 1f;
             
             
             
@@ -69,10 +71,12 @@ namespace Logic
                 {
                     canvasGroup.alpha += fadeStep;
                     textCanvasGroup.alpha += fadeStep;
-                    if (canvasGroup.alpha >= 1f && textCanvasGroup.alpha >= 1f)
+                    panelCanvasGroup.alpha += fadeStep;
+                    if (canvasGroup.alpha >= 1f && textCanvasGroup.alpha >= 1f && panelCanvasGroup.alpha >= 1f)
                     {
                         canvasGroup.alpha = 1f;
                         textCanvasGroup.alpha = 1f;
+                        panelCanvasGroup.alpha = 1f;
                         isFading = false;
                     }
                 }
@@ -80,10 +84,12 @@ namespace Logic
                 {
                     canvasGroup.alpha -= fadeStep;
                     textCanvasGroup.alpha -= fadeStep;
-                    if (canvasGroup.alpha <= 0f && textCanvasGroup.alpha <= 0f)
+                    panelCanvasGroup.alpha -= fadeStep;
+                    if (canvasGroup.alpha <= 0f && textCanvasGroup.alpha <= 0f && panelCanvasGroup.alpha <= 0f)
                     {
                         canvasGroup.alpha = 0f;
                         textCanvasGroup.alpha = 0f;
+                        panelCanvasGroup.alpha = 0f;
                         SwitchToNextSlide();
                         isFadingIn = true;
                     }
