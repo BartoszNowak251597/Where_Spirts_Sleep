@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ziemia_biala_dol_0: 8203392736783670402
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

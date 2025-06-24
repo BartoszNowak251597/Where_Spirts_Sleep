@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ziemia_biala_bok_0: -9037785174917644497
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
