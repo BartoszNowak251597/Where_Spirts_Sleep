@@ -16,12 +16,20 @@ namespace Logic
         public bool limitMaxY = false;
         public float maxY = 50f;
 
+        [Header("Dynamiczny offset kamery")]
+        public float cameraYOffset = 0f;
+
         private bool _overrideTarget = false;
         private Vector3 _overridePosition;
 
+        private void Start()
+        {
+            // Domyślnie ustaw offset na wartość z height
+            cameraYOffset = height;
+        }
+
         private void Update()
         {
-            // Debug.Log($"Kamera: override={_overrideTarget}, pos={transform.position}");
             if (!_overrideTarget && target == null) return;
 
             Vector3 targetPos;
@@ -36,7 +44,7 @@ namespace Logic
             else
             {
                 float targetX = lockX ? transform.position.x : target.position.x;
-                float targetY = lockY ? transform.position.y : target.position.y + height;
+                float targetY = lockY ? transform.position.y : target.position.y + cameraYOffset;
 
                 if (limitMaxY)
                     targetY = Mathf.Min(targetY, maxY);
@@ -46,7 +54,6 @@ namespace Logic
 
             transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * followSpeed);
         }
-
 
         public void SetOverridePosition(Vector3 position)
         {
@@ -58,7 +65,5 @@ namespace Logic
         {
             _overrideTarget = false;
         }
-        
     }
-
 }

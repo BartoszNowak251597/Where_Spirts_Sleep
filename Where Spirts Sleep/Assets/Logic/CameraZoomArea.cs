@@ -8,11 +8,16 @@ namespace Logic
         public Transform focusPoint;
         public float targetSize = 15f;
         public float transitionSpeed = 2f;
+        public float stayDuration = 3f;
 
         private FollowCharacter followCam;
         private Camera mainCam;
+
         private bool playerInside = false;
+        private bool overrideActive = false;
+
         private float defaultSize;
+        private float stayTimer = 0f;
 
         private void Start()
         {
@@ -26,35 +31,46 @@ namespace Logic
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            Debug.Log($"Trigger ENTER: {other.name}");
-
             if (!other.CompareTag("Player")) return;
-            if (followCam == null) return;
+            if (followCam == null || focusPoint == null) return;
 
             playerInside = true;
-            if (focusPoint != null)
-            {
-                followCam.SetOverridePosition(new Vector3(focusPoint.position.x, focusPoint.position.y, -10f));
-                Debug.Log($"Camera override to: {focusPoint.position}");
-            }
-        }
+            overrideActive = true;
+            stayTimer = stayDuration;
 
-        private void OnTriggerExit2D(Collider2D other)
-        {
-            if (!other.CompareTag("Player")) return;
-            if (followCam == null) return;
-
-            playerInside = false;
-            followCam.ClearOverride();
-            Debug.Log("Camera returned to follow player.");
+            followCam.SetOverridePosition(new Vector3(focusPoint.position.x, focusPoint.position.y, -10f));
         }
 
         private void Update()
         {
             if (mainCam == null) return;
 
-            float desiredSize = playerInside ? targetSize : defaultSize;
+            // Obsługa zoomu
+            float desiredSize = overrideActive ? targetSize : defaultSize;
             mainCam.orthographicSize = Mathf.Lerp(mainCam.orthographicSize, desiredSize, Time.deltaTime * transitionSpeed);
+
+            // Odliczanie czasu override
+            if (overrideActive)
+            {
+                stayTimer -= Time.deltaTime;
+                if (stayTimer <= 0f)
+                {
+                    followCam.ClearOverride();
+                    overrideActive = false;
+                }
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (!other.CompareTag("Player")) return;
+            playerInside = false;
+            
+            if (overrideActive)
+            {
+                followCam.ClearOverride();
+                overrideActive = false;
+            }
         }
     }
 }
