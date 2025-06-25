@@ -39,6 +39,7 @@ namespace Logic
         private Vector2 _originalColliderSize;
         private Vector2 _originalColliderOffset;
 
+
         void Start()
         {
             _isFacingRight = transform.localScale.x > 0;
@@ -54,6 +55,7 @@ namespace Logic
             {
                 UnlockAbility(PlayerAbility.DoubleJump);
             }
+            
         }
 
         private void Awake()
@@ -66,6 +68,7 @@ namespace Logic
 
             instance = this;
             DontDestroyOnLoad(gameObject);
+
         }
 
         void Update()
