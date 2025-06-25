@@ -5,6 +5,7 @@ namespace Logic
     public class Door : MonoBehaviour
     {
         public int keysRequired = 3;
+        public Collider2D physicalBlocker;
         private bool _playerInRange = false;
 
         void Update()
@@ -25,8 +26,10 @@ namespace Logic
         private void OpenDoor()
         {
             Debug.Log("Drzwi otwarte!");
-            // animacja dziwęki itd tutaj
-            gameObject.SetActive(false);
+            // Można dodać animację, dźwięk itp.
+            if (physicalBlocker != null)
+                physicalBlocker.enabled = false;
+
         }
 
         void OnTriggerEnter2D(Collider2D other)
