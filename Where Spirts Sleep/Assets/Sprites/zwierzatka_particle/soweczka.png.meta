@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      soweczka_0: 6407964728080626145
+      soweczka_1: 7476721107311002706
+      soweczka_2: -638764943309381359
+      soweczka_3: 2471267659092959003
+      soweczka_4: -8855464149488530536
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

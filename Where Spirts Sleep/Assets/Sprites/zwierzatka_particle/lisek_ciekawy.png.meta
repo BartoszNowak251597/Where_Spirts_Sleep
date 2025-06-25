@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lisek_ciekawy_0: 3877722022436876401
+      lisek_ciekawy_1: -8723671903439867246
+      lisek_ciekawy_2: -7039212698292903214
+      lisek_ciekawy_3: 3782000607765319124
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      kwiatek_typu_rozowy_0: -5621193371444499062
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

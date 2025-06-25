@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      kaczka_0: -5748024388864817483
+      kaczka_1: -5625638443508830220
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

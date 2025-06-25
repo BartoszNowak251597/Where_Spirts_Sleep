@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      grudka_ziemi_0: -7842240534870517941
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
