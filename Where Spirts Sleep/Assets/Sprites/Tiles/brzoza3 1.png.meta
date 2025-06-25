@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      brzoza3 1_0: 8760368603149692547
+      brzoza3 1_1: -8598736153494674750
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

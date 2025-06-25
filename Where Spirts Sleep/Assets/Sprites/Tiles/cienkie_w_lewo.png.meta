@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cienkie_w_lewo_0: 1319258832230044366
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
