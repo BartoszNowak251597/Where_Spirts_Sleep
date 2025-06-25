@@ -34,6 +34,7 @@ public class PauseManager : MonoBehaviour
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
+        PlayerPrefs.DeleteAll();
         SceneManager.LoadScene("0 Main Manu");
     }
 
