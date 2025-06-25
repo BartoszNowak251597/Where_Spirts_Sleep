@@ -19,7 +19,7 @@ namespace Logic
         public bool enableDoubleJumpManually = false;
         public BoxCollider2D playerCollider;
         public Transform ceilingCheck;
-        public float ceilingCheckRadius = 0.2f;
+        public float ceilingCheckRadius = 4f;
         public ParticleSystem DirtParticle;
 
         private float _currentSpeed;
