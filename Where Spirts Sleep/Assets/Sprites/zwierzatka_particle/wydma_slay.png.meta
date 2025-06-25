@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wydma_slay_0: 6932167579015148001
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

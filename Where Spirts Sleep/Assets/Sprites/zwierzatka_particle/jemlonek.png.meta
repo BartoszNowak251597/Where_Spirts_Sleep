@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      jemlonek_0: 7718676856799673899
+      jemlonek_1: 7397660190636056216
+      jemlonek_2: -5598742108188748460
+      jemlonek_3: 3771938922071674749
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
