@@ -10,15 +10,17 @@ namespace Logic
         public Sprite inactiveSprite;
         public Sprite activeSprite;
         
-        private SpriteRenderer spriteRenderer;
-        private bool isActive = false;
+        // private SpriteRenderer spriteRenderer;
+        // private bool isActive = false;
+        
+        public ParticleSystem particle;
 
 
-        public void Start()
-        {
-            spriteRenderer = GetComponent<SpriteRenderer>();
-            spriteRenderer.sprite = inactiveSprite;
-        }
+        // public void Start()
+        // {
+        //     spriteRenderer = GetComponent<SpriteRenderer>();
+        //     spriteRenderer.sprite = inactiveSprite;
+        // }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -34,12 +36,16 @@ namespace Logic
                     transform.position // pozycja checkpointu
                 );
                 
-                spriteRenderer.sprite = activeSprite;
-                isActive = true;
+                particle.Play();
+                
+                // spriteRenderer.sprite = activeSprite;
+                // isActive = true;
 
 
                 Debug.Log("Checkpoint zapisany: " + checkpointID);
-            }
+            } 
+            
+            // particle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         }
     }
 }

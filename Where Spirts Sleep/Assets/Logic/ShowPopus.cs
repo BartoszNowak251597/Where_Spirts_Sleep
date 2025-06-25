@@ -25,6 +25,7 @@ public class ShowPopup : MonoBehaviour
             if (popupText != null)
             {
                 popupText.text = message;
+                popupPanel.SetActive(true);
                 Debug.Log("Gracz wszedł w trigger!");
             }
         }

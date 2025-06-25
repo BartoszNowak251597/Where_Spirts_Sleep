@@ -20,6 +20,7 @@ namespace Logic
         public BoxCollider2D playerCollider;
         public Transform ceilingCheck;
         public float ceilingCheckRadius = 0.2f;
+        public ParticleSystem DirtParticle;
 
         private float _currentSpeed;
         private float _horizontalMovement;
@@ -100,7 +101,11 @@ namespace Logic
             
             float horizontalSpeed = Mathf.Abs(rb.linearVelocity.x);
             if (horizontalSpeed < 0.1f)
+            {
                 horizontalSpeed = 0f;
+                DirtParticle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            }
+                
 
             animator.SetFloat("magnitude", horizontalSpeed);
             animator.SetBool("is_crouching", _isCrouching);
@@ -123,6 +128,8 @@ namespace Logic
         public void Move(InputAction.CallbackContext context)
         {
             _horizontalMovement = context.ReadValue<Vector2>().x;
+            
+            DirtParticle.Play();
 
             if (_isCrouching)
                 _currentSpeed = crouchingSpeed;
