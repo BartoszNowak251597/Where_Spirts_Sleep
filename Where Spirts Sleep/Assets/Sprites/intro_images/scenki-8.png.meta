@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f0d25a401dc6d0f4b9ae89104a49a644
+guid: d8dc6581d929c6446ab1ae5394e81b63
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4160612853037859975
-    second: scenki-smutny-las-posag_0
+      213: 6195123895822867336
+    second: scenki-8_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: scenki-smutny-las-posag_0
+      name: scenki-8_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 97bf0ce67a88246c0800000000000000
-      internalID: -4160612853037859975
+      spriteID: 88b5e0e2c5089f550800000000000000
+      internalID: 6195123895822867336
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      scenki-smutny-las-posag_0: -4160612853037859975
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -38,6 +38,9 @@ namespace Logic
 
         private Vector2 _originalColliderSize;
         private Vector2 _originalColliderOffset;
+        
+        public AudioSource audioSource;
+        public AudioClip walkingSound;
 
 
         void Start()
@@ -55,7 +58,10 @@ namespace Logic
             {
                 UnlockAbility(PlayerAbility.DoubleJump);
             }
-            
+            audioSource.clip = walkingSound;
+            audioSource.loop = true;
+            audioSource.playOnAwake = false;
+
         }
 
         private void Awake()
@@ -130,6 +136,20 @@ namespace Logic
 
         public void Move(InputAction.CallbackContext context)
         {
+            if (!_isCrouching && !_isSprinting && Mathf.Abs(_horizontalMovement) > 0.1f)
+            {
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.Play();
+                }
+            }
+            else
+            {
+                if (audioSource.isPlaying)
+                {
+                    audioSource.Stop();
+                }
+            }
             _horizontalMovement = context.ReadValue<Vector2>().x;
             
             DirtParticle.Play();
@@ -139,7 +159,9 @@ namespace Logic
             else if (_isSprinting)
                 _currentSpeed = sprintingSpeed;
             else
+            {
                 _currentSpeed = walkingSpeed;
+            }
         }
 
         public void Sprint(InputAction.CallbackContext context)
