@@ -13,6 +13,17 @@ namespace Logic
         public ParticleSystem particle;
 
         public int jumpsUnlocked = 1;
+        
+        private void Start()
+        {
+            if (particle == null)
+                particle = GetComponentInChildren<ParticleSystem>();
+
+            if (particle == null)
+                Debug.LogError("[Checkpoint] ❌ ParticleSystem not found!");
+            else
+                Debug.Log("[Checkpoint] ✅ ParticleSystem found!");
+        }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -30,7 +41,10 @@ namespace Logic
 
                 GameManager.Instance.MaxJumps = jumpsUnlocked;
 
-                particle.Play();
+                if (particle != null)
+                {
+                    particle.Play();
+                }
 
                 Debug.Log("Checkpoint zapisany: " + checkpointID);
             }

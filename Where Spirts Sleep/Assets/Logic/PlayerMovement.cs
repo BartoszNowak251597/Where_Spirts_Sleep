@@ -47,8 +47,18 @@ namespace Logic
 
             _originalColliderSize = playerCollider.size;
             _originalColliderOffset = playerCollider.offset;
+            
+            if (GameManager.Instance != null)
+            {
+                SetMaxJumps(GameManager.Instance.MaxJumps);
+            }
+            else
+            {
+                Debug.LogWarning("[Player] Brak GameManager! Ustawiam 1 domyślnie.");
+                SetMaxJumps(1); // fallback
+            }
 
-            SetMaxJumps(GameManager.Instance.MaxJumps);
+            // SetMaxJumps(GameManager.Instance.MaxJumps);
 
             if (enableDoubleJumpManually)
             {
@@ -57,6 +67,8 @@ namespace Logic
             audioSource.clip = walkingSound;
             audioSource.loop = true;
             audioSource.playOnAwake = false;
+            
+            Debug.Log("[PlayerMovement] Start - GameManager.MaxJumps: " + GameManager.Instance.MaxJumps);
         }
 
         void Update()

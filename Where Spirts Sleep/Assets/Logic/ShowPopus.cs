@@ -9,25 +9,52 @@ public class ShowPopup : MonoBehaviour
 
     [Header("Czy z przyciskiem?")]
     public bool keyShown;
-    public KeyCode keyCode = KeyCode.E;
+    public KeyCode openKey = KeyCode.E;
+    public KeyCode closeKey = KeyCode.Q;
 
     [TextArea]
     public string message;
 
     private bool playerInRange = false;
     private bool messageShown = false;
+    
+    public Animator animator;
 
     private void Start()
     {
         if (popupPanel != null)
             popupPanel.SetActive(false);
+        
+        if (animator == null)
+        {
+            GameObject player = GameObject.FindWithTag("Player");
+            if (player != null)
+                animator = player.GetComponent<Animator>();
+        }
     }
 
     private void Update()
     {
-        if (keyShown && playerInRange && !messageShown && Input.GetKeyDown(keyCode))
+        if (playerInRange)
         {
-            ShowMessage();
+            if (keyShown && !messageShown && Input.GetKeyDown(openKey))
+            {
+                if (animator != null)
+                {
+                    animator.SetBool("IsMessageShown", true);
+                }
+                ShowMessage();
+                
+            }
+
+            if (messageShown && Input.GetKeyDown(closeKey))
+            {
+                if (animator != null)
+                {
+                    animator.SetBool("IsMessageShown", false);
+                }
+                HideMessage();
+            }
         }
     }
 
@@ -47,10 +74,7 @@ public class ShowPopup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
-            if (popupPanel != null)
-                popupPanel.SetActive(false);
-
-            messageShown = false; // pozwala ponownie wyświetlić po wejściu
+            HideMessage(); // chowa automatycznie po odejściu
         }
     }
 
@@ -61,7 +85,19 @@ public class ShowPopup : MonoBehaviour
             popupText.text = message;
             popupPanel.SetActive(true);
             messageShown = true;
-            Debug.Log("Pokaż wiadomość");
+            
+            Debug.Log("🗨️ Pokazano wiadomość");
         }
+    }
+
+    private void HideMessage()
+    {
+        if (popupPanel != null)
+            popupPanel.SetActive(false);
+
+        
+
+        messageShown = false;
+        Debug.Log("❌ Ukryto wiadomość");
     }
 }

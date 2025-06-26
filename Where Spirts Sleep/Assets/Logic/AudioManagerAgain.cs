@@ -27,28 +27,6 @@ public class AudioManagerAgain : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-
-    // public void PlayMusic(AudioClip clip, float volume = 1f)
-    // {
-    //     if (clip == null || musicSource == null) return;
-    //     
-    //     if (musicSource.clip == clip && musicSource.isPlaying)
-    //     {
-    //         // Ale jeśli zmieniamy tylko głośność — zaktualizuj ją
-    //         musicSource.volume = Mathf.Clamp01(volume);
-    //         return;
-    //     }
-    //
-    //
-    //     currentMusic = clip;
-    //     currentMusicVolume = volume;
-    //
-    //     musicSource.clip = clip;
-    //     musicSource.loop = true;
-    //     musicSource.volume = Mathf.Clamp01(volume);
-    //     musicSource.Play();
-    // }
-    //
     public void PlayMusic(AudioClip clip, float volume = 1f, float fadeTime = 1f)
     {
         if (clip == null || musicSource == null) return;
@@ -74,7 +52,7 @@ public class AudioManagerAgain : MonoBehaviour
         
         if (ambient.isPlaying && ambient.clip == clip)
         {
-            ambient.volume = Mathf.Clamp01(volume); // tylko zmień głośność, jeśli trzeba
+            ambient.volume = Mathf.Clamp01(volume);
             return;
         }
 
@@ -96,38 +74,21 @@ public class AudioManagerAgain : MonoBehaviour
         if (currentAmbients.ContainsKey(index))
             currentAmbients.Remove(index);
     }
-    //
-    // public void StopAllAmbients()
-    // {
-    //     foreach (var source in ambientSources)
-    //     {
-    //         source.Stop();
-    //     }
-    //     currentAmbients.Clear();
-    // }
-
-    // // Odtwarza ostatnio zapisaną muzykę i ambienty (np. po wczytaniu checkpointu)
-    // public void RestoreAudio()
-    // {
-    //     if (currentMusic != null)
-    //         PlayMusic(currentMusic, currentMusicVolume);
-    //
-    //     foreach (var kvp in currentAmbients)
-    //     {
-    //         int index = kvp.Key;
-    //         var (clip, loop, volume) = kvp.Value;
-    //         PlayAmbient(clip, index, loop, volume);
-    //     }
-    // }
     
-    public void PlaySFX(AudioClip clip, float volume = 1f)
+    public void PlaySFXLoop(AudioClip clip, float volume = 1f)
     {
-        if (clip == null || sfxSource == null)
-        {
-            Debug.LogWarning("PlaySFX: brak klipu lub sfxSource");
-            return;
-        }
-        sfxSource.PlayOneShot(clip, volume);
+        if (sfxSource == null || clip == null) return;
+        sfxSource.clip = clip;
+        sfxSource.volume = volume;
+        sfxSource.loop = true;
+        sfxSource.Play();
+    }
+
+    public void StopSFX()
+    {
+        if (sfxSource == null) return;
+        sfxSource.Stop();
+        sfxSource.clip = null;
     }
 
     

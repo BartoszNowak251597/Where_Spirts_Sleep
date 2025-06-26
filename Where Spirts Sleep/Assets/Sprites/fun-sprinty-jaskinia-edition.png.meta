@@ -1,0 +1,755 @@
+fileFormatVersion: 2
+guid: 91ff380c22b7e4e45bcec922fff815b7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3883576381509011123
+    second: fun-sprinty-jaskinia-edition_0
+  - first:
+      213: -881613143940802892
+    second: fun-sprinty-jaskinia-edition_1
+  - first:
+      213: -2040873490283323553
+    second: fun-sprinty-jaskinia-edition_2
+  - first:
+      213: 2719757269843368900
+    second: fun-sprinty-jaskinia-edition_3
+  - first:
+      213: -5695491916919752723
+    second: fun-sprinty-jaskinia-edition_4
+  - first:
+      213: -5375193930181004784
+    second: fun-sprinty-jaskinia-edition_5
+  - first:
+      213: -3609860107876830782
+    second: fun-sprinty-jaskinia-edition_6
+  - first:
+      213: 2301198668188925837
+    second: fun-sprinty-jaskinia-edition_7
+  - first:
+      213: -6212310787757801209
+    second: fun-sprinty-jaskinia-edition_8
+  - first:
+      213: 8558676512583601889
+    second: fun-sprinty-jaskinia-edition_9
+  - first:
+      213: 4038013280440049302
+    second: fun-sprinty-jaskinia-edition_10
+  - first:
+      213: -4163207915771268094
+    second: fun-sprinty-jaskinia-edition_11
+  - first:
+      213: -5068483252816477637
+    second: fun-sprinty-jaskinia-edition_12
+  - first:
+      213: -5744339053712678855
+    second: fun-sprinty-jaskinia-edition_13
+  - first:
+      213: -2461580754034693706
+    second: fun-sprinty-jaskinia-edition_14
+  - first:
+      213: 2882137187004528293
+    second: fun-sprinty-jaskinia-edition_15
+  - first:
+      213: -73893987179306631
+    second: fun-sprinty-jaskinia-edition_16
+  - first:
+      213: 8280347111449804672
+    second: fun-sprinty-jaskinia-edition_17
+  - first:
+      213: 484765389149697733
+    second: fun-sprinty-jaskinia-edition_18
+  - first:
+      213: 2184956937740408313
+    second: fun-sprinty-jaskinia-edition_19
+  - first:
+      213: -6792923153576491832
+    second: fun-sprinty-jaskinia-edition_20
+  - first:
+      213: -4668770287635343935
+    second: fun-sprinty-jaskinia-edition_21
+  - first:
+      213: -2886033366665564556
+    second: fun-sprinty-jaskinia-edition_22
+  - first:
+      213: 5937868657918115275
+    second: fun-sprinty-jaskinia-edition_23
+  - first:
+      213: -747756950457771259
+    second: fun-sprinty-jaskinia-edition_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_0
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 50
+        width: 194
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d49fe0a6bd3ca1ac0800000000000000
+      internalID: -3883576381509011123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_1
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 193
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b6d71e3481e3c3f0800000000000000
+      internalID: -881613143940802892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_2
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 50
+        width: 193
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5f9624af5c5da3e0800000000000000
+      internalID: -2040873490283323553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_3
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 50
+        width: 195
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cbdc48b3d48eb520800000000000000
+      internalID: 2719757269843368900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_4
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 50
+        width: 194
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de7b3ee074c85f0b0800000000000000
+      internalID: -5695491916919752723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_5
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 187
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 012b9b879997765b0800000000000000
+      internalID: -5375193930181004784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_6
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 50
+        width: 194
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c1f5259b5337edc0800000000000000
+      internalID: -3609860107876830782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_7
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 193
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8fb0071fff7fef10800000000000000
+      internalID: 2301198668188925837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_8
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 50
+        width: 194
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7018e55b04079c9a0800000000000000
+      internalID: -6212310787757801209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_9
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 193
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ee460041f686c670800000000000000
+      internalID: 8558676512583601889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_10
+      rect:
+        serializedVersion: 2
+        x: 1866
+        y: 50
+        width: 195
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69e50fa2fa7e90830800000000000000
+      internalID: 4038013280440049302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_11
+      rect:
+        serializedVersion: 2
+        x: 2139
+        y: 50
+        width: 196
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 204fb5e45705936c0800000000000000
+      internalID: -4163207915771268094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_12
+      rect:
+        serializedVersion: 2
+        x: 2414
+        y: 50
+        width: 195
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b328bd5e55129a9b0800000000000000
+      internalID: -5068483252816477637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_13
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 50
+        width: 196
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9306d02c0120840b0800000000000000
+      internalID: -5744339053712678855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_14
+      rect:
+        serializedVersion: 2
+        x: 2968
+        y: 50
+        width: 194
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b9e2d1a855b6ddd0800000000000000
+      internalID: -2461580754034693706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_15
+      rect:
+        serializedVersion: 2
+        x: 2968
+        y: 193
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a6395950886ff720800000000000000
+      internalID: 2882137187004528293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_16
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 126
+        width: 105
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 971e3276fc979fef0800000000000000
+      internalID: -73893987179306631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_17
+      rect:
+        serializedVersion: 2
+        x: 3788
+        y: 105
+        width: 111
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08fb5e2a3d3b9e270800000000000000
+      internalID: 8280347111449804672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_18
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 174
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c6fba39d8b3ab600800000000000000
+      internalID: 484765389149697733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_19
+      rect:
+        serializedVersion: 2
+        x: 3414
+        y: 157
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f5da8b22c6825e10800000000000000
+      internalID: 2184956937740408313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_20
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 116
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c40c8cd160bab1a0800000000000000
+      internalID: -6792923153576491832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_21
+      rect:
+        serializedVersion: 2
+        x: 3410
+        y: 98
+        width: 103
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c5d89bd822353fb0800000000000000
+      internalID: -4668770287635343935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_22
+      rect:
+        serializedVersion: 2
+        x: 3280
+        y: 65
+        width: 59
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47e69f1a1ffb2f7d0800000000000000
+      internalID: -2886033366665564556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_23
+      rect:
+        serializedVersion: 2
+        x: 3908
+        y: 104
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcd722e851c876250800000000000000
+      internalID: 5937868657918115275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fun-sprinty-jaskinia-edition_24
+      rect:
+        serializedVersion: 2
+        x: 3948
+        y: 53
+        width: 59
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50b92ade30f6f95f0800000000000000
+      internalID: -747756950457771259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
