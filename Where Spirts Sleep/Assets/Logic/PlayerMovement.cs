@@ -21,6 +21,8 @@ namespace Logic
         public Transform ceilingCheck;
         public float ceilingCheckRadius = 4f;
         public ParticleSystem DirtParticle;
+        public AudioSource audioSource;
+        public AudioClip walkingSound;
 
         private float _currentSpeed;
         private float _horizontalMovement;
@@ -34,14 +36,9 @@ namespace Logic
         private bool _isSprinting;
         private bool _isCrouching;
         private bool _hasDoubleJump;
-        private static PlayerMovement instance;
 
         private Vector2 _originalColliderSize;
         private Vector2 _originalColliderOffset;
-        
-        public AudioSource audioSource;
-        public AudioClip walkingSound;
-
 
         void Start()
         {
@@ -51,8 +48,7 @@ namespace Logic
             _originalColliderSize = playerCollider.size;
             _originalColliderOffset = playerCollider.offset;
 
-            _maxJumps = 1;
-            _jumpsLeft = 1;
+            SetMaxJumps(GameManager.Instance.MaxJumps);
 
             if (enableDoubleJumpManually)
             {
@@ -61,20 +57,6 @@ namespace Logic
             audioSource.clip = walkingSound;
             audioSource.loop = true;
             audioSource.playOnAwake = false;
-
-        }
-
-        private void Awake()
-        {
-            if (instance != null && instance != this)
-            {
-                Destroy(gameObject);
-                return;
-            }
-
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-
         }
 
         void Update()
@@ -101,26 +83,24 @@ namespace Logic
             {
                 rb.linearVelocity += Vector2.up * (Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime);
             }
-            
+
             if (!_isGrounded && _isSprinting)
             {
                 _isSprinting = false;
                 _currentSpeed = walkingSpeed;
             }
-            
+
             float horizontalSpeed = Mathf.Abs(rb.linearVelocity.x);
             if (horizontalSpeed < 0.1f)
             {
                 horizontalSpeed = 0f;
                 DirtParticle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             }
-                
 
             animator.SetFloat("magnitude", horizontalSpeed);
             animator.SetBool("is_crouching", _isCrouching);
-			animator.SetBool("is_grounded",_isGrounded);
+            animator.SetBool("is_grounded", _isGrounded);
             animator.SetBool("is_jumping", !_isGrounded && rb.linearVelocity.y > 0.1f);
-
         }
 
         private void Flip()
@@ -134,24 +114,31 @@ namespace Logic
             }
         }
 
+        public void SetMaxJumps(int maxJumps)
+        {
+            _maxJumps = maxJumps;
+            _jumpsLeft = maxJumps;
+        }
+
         public void Move(InputAction.CallbackContext context)
         {
+            _horizontalMovement = context.ReadValue<Vector2>().x;
+
             if (!_isCrouching && !_isSprinting && Mathf.Abs(_horizontalMovement) > 0.1f)
             {
-                if (!audioSource.isPlaying)
+                if (audioSource != null && !audioSource.isPlaying)
                 {
                     audioSource.Play();
                 }
             }
             else
             {
-                if (audioSource.isPlaying)
+                if (audioSource != null && audioSource.isPlaying)
                 {
                     audioSource.Stop();
                 }
             }
-            _horizontalMovement = context.ReadValue<Vector2>().x;
-            
+
             DirtParticle.Play();
 
             if (_isCrouching)
@@ -159,9 +146,7 @@ namespace Logic
             else if (_isSprinting)
                 _currentSpeed = sprintingSpeed;
             else
-            {
                 _currentSpeed = walkingSpeed;
-            }
         }
 
         public void Sprint(InputAction.CallbackContext context)
@@ -199,11 +184,8 @@ namespace Logic
             else if (context.canceled)
             {
                 bool hasCeiling = Physics2D.OverlapCircle(ceilingCheck.position, ceilingCheckRadius, groundLayer);
-    
-                if (hasCeiling)
-                {
-                    return;
-                }
+
+                if (hasCeiling) return;
 
                 _isCrouching = false;
                 _currentSpeed = walkingSpeed;
@@ -211,17 +193,23 @@ namespace Logic
                 playerCollider.size = _originalColliderSize;
                 playerCollider.offset = _originalColliderOffset;
             }
-
         }
-
 
         public void Jump(InputAction.CallbackContext context)
         {
-            if (context.started && _jumpsLeft > 0)
+            if (context.started)
             {
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingHeight);
-                _jumpsLeft--;
-                animator.SetTrigger("Jump");
+                if (_jumpsLeft > 0)
+                {
+                    Debug.Log("[PLAYER] Skok! Pozostało skoków: " + (_jumpsLeft - 1));
+                    rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingHeight);
+                    _jumpsLeft--;
+                    animator.SetTrigger("Jump");
+                }
+                else
+                {
+                    Debug.Log("[PLAYER] Brak skoków!");
+                }
             }
 
             if (context.canceled)
@@ -258,6 +246,13 @@ namespace Logic
         {
             _maxJumps = HasDoubleJump() ? 2 : 1;
             _jumpsLeft = _isGrounded ? _maxJumps : Mathf.Min(_jumpsLeft, _maxJumps);
+        }
+
+        public void ClearAbilities()
+        {
+            _unlockedAbilities.Clear();
+            _hasDoubleJump = false;
+            RefreshJumpSettings();
         }
     }
 }

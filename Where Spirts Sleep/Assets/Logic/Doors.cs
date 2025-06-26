@@ -29,7 +29,6 @@ namespace Logic
             // Można dodać animację, dźwięk itp.
             if (physicalBlocker != null)
                 physicalBlocker.enabled = false;
-
         }
 
         void OnTriggerEnter2D(Collider2D other)

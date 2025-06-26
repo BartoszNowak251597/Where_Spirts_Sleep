@@ -21986,6 +21986,7 @@ MonoBehaviour:
   inactiveSprite: {fileID: -5053049702557918596, guid: d73d5431b98d07a499dbb0f58fe39331, type: 3}
   activeSprite: {fileID: -3288069576014547932, guid: d73d5431b98d07a499dbb0f58fe39331, type: 3}
   particle: {fileID: 890226629}
+  jumpsUnlocked: 1
 --- !u!70 &249737646
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -28594,6 +28595,7 @@ MonoBehaviour:
   inactiveSprite: {fileID: -3821912502541671925, guid: d73d5431b98d07a499dbb0f58fe39331, type: 3}
   activeSprite: {fileID: 6684072162053161590, guid: d73d5431b98d07a499dbb0f58fe39331, type: 3}
   particle: {fileID: 668569664}
+  jumpsUnlocked: 2
 --- !u!70 &439619647
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -79304,6 +79306,7 @@ MonoBehaviour:
   inactiveSprite: {fileID: -5053049702557918596, guid: d73d5431b98d07a499dbb0f58fe39331, type: 3}
   activeSprite: {fileID: -3288069576014547932, guid: d73d5431b98d07a499dbb0f58fe39331, type: 3}
   particle: {fileID: 234331753}
+  jumpsUnlocked: 2
 --- !u!70 &1594407740
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -85512,6 +85515,7 @@ MonoBehaviour:
   inactiveSprite: {fileID: -5053049702557918596, guid: d73d5431b98d07a499dbb0f58fe39331, type: 3}
   activeSprite: {fileID: -3288069576014547932, guid: d73d5431b98d07a499dbb0f58fe39331, type: 3}
   particle: {fileID: 609947141}
+  jumpsUnlocked: 1
 --- !u!70 &1743910872
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

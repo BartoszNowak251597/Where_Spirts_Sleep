@@ -32,7 +32,6 @@ namespace Logic
 
             Debug.Log("Gracz znaleziony.");
 
-            // Kamera śledzi gracza
             var cameraFollow = Camera.main.GetComponent<FollowCharacter>();
             if (cameraFollow != null)
             {
@@ -41,7 +40,6 @@ namespace Logic
                 Debug.Log("Kamera przypisana do gracza.");
             }
 
-            // 🔧 Tu był brakujący fragment:
             var movement = player.GetComponent<PlayerMovement>();
             if (movement == null)
             {
@@ -49,17 +47,6 @@ namespace Logic
                 return;
             }
 
-            // Odtwarzanie umiejętności
-            foreach (string ability in save.unlockedAbilities)
-            {
-                Debug.Log("Odtwarzanie umiejętności: " + ability);
-                if (System.Enum.TryParse(ability, out PlayerAbility parsed))
-                {
-                    movement.UnlockAbility(parsed);
-                }
-            }
-
-            // Przenoszenie gracza
             var checkpoint = GameObject.FindObjectsOfType<Checkpoint>()
                 .FirstOrDefault(c => c.checkpointID == save.checkpointID);
 
@@ -67,11 +54,15 @@ namespace Logic
             {
                 Debug.Log("Przenoszę gracza do checkpointu: " + checkpoint.checkpointID);
                 player.transform.position = checkpoint.transform.position;
+
+                GameManager.Instance.MaxJumps = checkpoint.jumpsUnlocked;
+                Debug.Log($"[CHECKPOINT MANAGER] Od checkpointu: maxJumps={checkpoint.jumpsUnlocked}");
             }
             else
             {
                 Debug.Log("Checkpoint nie znaleziony, używam zapamiętanej pozycji.");
                 player.transform.position = new Vector3(save.checkpointPosX, save.checkpointPosY, player.transform.position.z);
+                GameManager.Instance.MaxJumps = 1;
             }
         }
     }

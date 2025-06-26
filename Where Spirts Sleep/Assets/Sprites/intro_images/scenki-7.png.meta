@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      scenki-7_0: 7121634885741450288
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

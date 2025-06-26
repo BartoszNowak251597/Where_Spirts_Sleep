@@ -6,21 +6,13 @@ namespace Logic
     public class Checkpoint : MonoBehaviour
     {
         public string checkpointID;
-        
+
         public Sprite inactiveSprite;
         public Sprite activeSprite;
-        
-        // private SpriteRenderer spriteRenderer;
-        // private bool isActive = false;
-        
+
         public ParticleSystem particle;
 
-
-        // public void Start()
-        // {
-        //     spriteRenderer = GetComponent<SpriteRenderer>();
-        //     spriteRenderer.sprite = inactiveSprite;
-        // }
+        public int jumpsUnlocked = 1;
 
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -33,19 +25,15 @@ namespace Logic
                     checkpointID,
                     SceneManager.GetActiveScene().buildIndex,
                     player.GetUnlockedAbilities(),
-                    transform.position // pozycja checkpointu
+                    transform.position
                 );
-                
-                particle.Play();
-                
-                // spriteRenderer.sprite = activeSprite;
-                // isActive = true;
 
+                GameManager.Instance.MaxJumps = jumpsUnlocked;
+
+                particle.Play();
 
                 Debug.Log("Checkpoint zapisany: " + checkpointID);
-            } 
-            
-            // particle.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            }
         }
     }
 }
