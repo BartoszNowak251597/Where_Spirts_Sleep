@@ -39,20 +39,14 @@ public class ShowPopup : MonoBehaviour
         {
             if (keyShown && !messageShown && Input.GetKeyDown(openKey))
             {
-                if (animator != null)
-                {
-                    animator.SetBool("IsMessageShown", true);
-                }
+                
                 ShowMessage();
                 
             }
 
             if (messageShown && Input.GetKeyDown(closeKey))
             {
-                if (animator != null)
-                {
-                    animator.SetBool("IsMessageShown", false);
-                }
+               
                 HideMessage();
             }
         }
@@ -63,7 +57,8 @@ public class ShowPopup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
-
+            
+          
             if (!keyShown)
                 ShowMessage();
         }
@@ -86,6 +81,13 @@ public class ShowPopup : MonoBehaviour
             popupPanel.SetActive(true);
             messageShown = true;
             
+            if (animator != null)
+            {
+                animator.SetBool("IsMessageShown", true);
+            }
+
+            
+            
             Debug.Log("🗨️ Pokazano wiadomość");
         }
     }
@@ -94,6 +96,12 @@ public class ShowPopup : MonoBehaviour
     {
         if (popupPanel != null)
             popupPanel.SetActive(false);
+        
+        if (animator != null)
+        {
+            animator.SetBool("IsMessageShown", false);
+        }
+
 
         
 
