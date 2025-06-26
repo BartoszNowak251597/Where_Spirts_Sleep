@@ -74,7 +74,7 @@ public class ShowPopup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
-            HideMessage(); // chowa automatycznie po odejściu
+            HideMessage();
         }
     }
 

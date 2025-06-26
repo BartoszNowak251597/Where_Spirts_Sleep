@@ -24,7 +24,7 @@ namespace Logic
 
         private void Start()
         {
-            // Domyślnie ustaw offset na wartość z height
+       
             cameraYOffset = height;
         }
 

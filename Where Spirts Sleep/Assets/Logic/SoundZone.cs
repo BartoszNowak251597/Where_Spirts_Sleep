@@ -24,11 +24,11 @@ public class SoundZone : MonoBehaviour
     [Range(0f, 1f)] public float ambientVolume = 1f;
     [Range(0f, 1f)] public float musicVolume = 1f;
 
-    private static string lastZoneName = ""; // zapamiętaj ostatnią strefę
+    private static string lastZoneName = "";
 
     private void Start()
     {
-        // Jeśli gracz jest już w triggerze przy starcie, odpalić dźwięki
+
         Collider2D player = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Collider2D>();
         Collider2D thisZone = GetComponent<Collider2D>();
 
@@ -44,7 +44,7 @@ public class SoundZone : MonoBehaviour
         if (!other.CompareTag("Player")) return;
 
         if (lastZoneName == gameObject.name)
-            return; // Jeśli to ta sama strefa, nic nie zmieniaj
+            return; 
 
         ApplyZoneSounds();
         lastZoneName = gameObject.name;
@@ -57,7 +57,7 @@ public class SoundZone : MonoBehaviour
             AudioManagerAgain.Instance.PlayMusic(newMusic, musicVolume, 2f);
         }
         
-        // AudioManagerAgain.Instance.StopAllAmbients();
+
 
         List<int> usedIndices = new List<int>();
         
@@ -70,7 +70,7 @@ public class SoundZone : MonoBehaviour
                 ambient.audioSourceIndex,
                 ambient.loop,
                 ambient.volume * ambientVolume,
-                1f // fade 1 sekunda
+                1f 
             );
         }
         

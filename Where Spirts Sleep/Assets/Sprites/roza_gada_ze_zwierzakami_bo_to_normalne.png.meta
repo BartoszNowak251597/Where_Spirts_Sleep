@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      roza_gada_ze_zwierzakami_bo_to_normalne_0: -2186787387638988152
+      roza_gada_ze_zwierzakami_bo_to_normalne_1: 4935094412847118184
+      roza_gada_ze_zwierzakami_bo_to_normalne_2: 2170430480278525348
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

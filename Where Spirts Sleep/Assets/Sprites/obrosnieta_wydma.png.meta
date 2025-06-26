@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      obrosnieta_wydma_0: -1363665545061678811
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

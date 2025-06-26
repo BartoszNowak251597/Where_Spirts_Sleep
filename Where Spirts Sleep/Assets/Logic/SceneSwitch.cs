@@ -22,7 +22,7 @@ namespace Logic
                     );
                 }
                 
-                SceneManager.LoadScene(sceneToSwitchTo); // przekazujemy nazwę docelowej sceny
+                SceneManager.LoadScene(sceneToSwitchTo);
             }
         }
     }

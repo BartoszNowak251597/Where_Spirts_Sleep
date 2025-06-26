@@ -10,7 +10,7 @@ public class LoadingScreen : MonoBehaviour
 
     private System.Collections.IEnumerator LoadNextSceneAsync()
     {
-        yield return new WaitForSeconds(1f); // symulacja czasu ładowania (opcjonalnie)
+        yield return new WaitForSeconds(1f);
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(LoadingData.NextScene);
 
